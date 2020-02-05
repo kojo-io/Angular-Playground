@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="my-4">Directives</h1>
+      <div class="container p-5">
+        <div class="row">
+          <div class="col-6">
+            <form [formGroup]="form">
+              <div class="form-group">
+                <label for="money">Amount</label>
+                <input id="money" class="form-control" formControlName="money" appCurrencyInput [symbol]="'$'" [separator]="','" [decimalPlaces]="'2'">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

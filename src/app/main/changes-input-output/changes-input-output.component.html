@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="my-4">NgOnChanges @Input @Output</h1>
+      <div class="row">
+        <div class="col-8">
+          <app-child-component [receivedValue]="money" (newValue)="getData($event)"></app-child-component>
+        </div>
+        <div class="col-4">
+          <div class="alert alert-primary" role="alert" *ngIf="money">
+            Submitted Value = {{money}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

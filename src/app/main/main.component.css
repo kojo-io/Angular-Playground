@@ -1,0 +1,9 @@
+.side-nav{
+  position: relative;
+  display: table;
+  z-index: 1;
+  right: 0;
+  background-color: white;
+  left: 0;
+  height: 90vh;
+}

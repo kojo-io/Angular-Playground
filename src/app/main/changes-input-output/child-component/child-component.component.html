@@ -1,0 +1,20 @@
+<form [formGroup]="form" class="container">
+  <div class="row">
+    <div class="form-group col-8">
+      <input placeholder="amount" class="form-control" formControlName="money" appCurrencyInput [symbol]="'$'" [separator]="','" [decimalPlaces]="'2'">
+    </div>
+    <div class="form-group col-4">
+      <button class="btn btn-primary btn-block" (click)="valueReturned()">Submit</button>
+    </div>
+  </div>
+</form>
+<div class="card">
+  <div class="card-body text-monospace">
+    <h5>NgOnChanges Console</h5>
+    <ul class="">
+      <li *ngFor="let log of console">
+        {{log}}
+      </li>
+    </ul>
+  </div>
+</div>
