@@ -10,7 +10,15 @@
                 <label for="money">Amount</label>
                 <input id="money" class="form-control" formControlName="money" appCurrencyInput [symbol]="'$'" [separator]="','" [decimalPlaces]="'2'">
               </div>
+              <div class="form-group">
+                <app-ag-date colorDate="blue" colorDay="#FF5FEA" colorMonthYear="#9AC6FF" fontSizeDate="50px" fontSizeDay="20px" fontSizeMonthYear="10px"></app-ag-date>
+              </div>
             </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <app-ag-calendar></app-ag-calendar>
           </div>
         </div>
       </div>

@@ -1,0 +1,44 @@
+<form [formGroup]="form">
+  <input class="form-control" formControlName="date" type="date">
+</form>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <div class="btn-group">
+        <button (click)="GetPreviousMonth()" class="btn btn-primary">
+          Previous
+        </button>
+        <button (click)="GetNextMonth()" class="btn btn-primary">
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<ng-container *ngIf="!useUTC">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2" *ngFor="let date of AllDates">
+        <div class="datec" [ngClass]="GetToday(date)">
+          <small>{{GetMonth(date)}}</small>
+          <h1>{{GetDate(date)}}</h1>
+          <small>{{GetDay(date)}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="useUTC">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3" *ngFor="let date of AllDates">
+        <div class="datec" [ngClass]="GetToday(date)">
+          <small>{{GetMonthUTC(date)}}</small>
+          <h1>{{GetUTCDate(date)}}</h1>
+          <small>{{GetUTCDay(date)}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
