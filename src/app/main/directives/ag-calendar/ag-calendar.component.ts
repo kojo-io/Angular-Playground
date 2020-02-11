@@ -87,6 +87,29 @@ export class AgCalendarComponent implements OnInit, OnChanges {
     return days;
   }
 
+  //
+  // private DaysInMonth(year, month): any {
+  //   const date = new Date(year, month, 1);
+  //   let rowcount = 0;
+  //   let days = [];
+  //   const rowdays = [];
+  //   while (date.getMonth() === month) {
+  //     days.push(new Date(date));
+  //     date.setDate(date.getDate() + 1);
+  //     rowcount ++;
+  //     if (rowcount === 7) {
+  //       rowdays.push(days);
+  //       rowcount = 0;
+  //       days = [];
+  //     }
+  //   }
+  //   if (days.length > 0) {
+  //     rowdays.push(days);
+  //   }
+  //   console.log(rowdays);
+  //   return rowdays;
+  // }
+
    private DaysInMonthUTC(year, month): any {
     const date = new Date(Date.UTC(year, month, 1));
     const days = [];

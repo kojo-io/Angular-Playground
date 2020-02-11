@@ -16,29 +16,145 @@
   </div>
 </div>
 <br>
-<ng-container *ngIf="!useUTC">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2" *ngFor="let date of AllDates">
-        <div class="datec" [ngClass]="GetToday(date)">
-          <small>{{GetMonth(date)}}</small>
-          <h1>{{GetDate(date)}}</h1>
-          <small>{{GetDay(date)}}</small>
-        </div>
-      </div>
+<!--<ng-container *ngIf="!useUTC">-->
+<!--  <div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--      <div class="col-2" *ngFor="let date of AllDates">-->
+<!--        <div class="datec" [ngClass]="GetToday(date)">-->
+<!--          <small>{{GetMonth(date)}}</small>-->
+<!--          <h1>{{GetDate(date)}}</h1>-->
+<!--          <small>{{GetDay(date)}}</small>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</ng-container>-->
+<!--<ng-container *ngIf="useUTC">-->
+<!--  <div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--      <div class="col-3" *ngFor="let date of AllDates">-->
+<!--        <div class="datec" [ngClass]="GetToday(date)">-->
+<!--          <small>{{GetMonthUTC(date)}}</small>-->
+<!--          <h1>{{GetUTCDate(date)}}</h1>-->
+<!--          <small>{{GetUTCDay(date)}}</small>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</ng-container>-->
+<!--<div class="col-2" *ngFor="let date of AllDates">-->
+<!--  <div class="datec" [ngClass]="GetToday(date)">-->
+<!--    <small>{{GetMonth(date)}}</small>-->
+<!--    <h1>{{GetDate(date)}}</h1>-->
+<!--    <small>{{GetDay(date)}}</small>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th *ngFor="let days of AllDays">
+            {{days}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+<!--        <tr *ngFor="let dates of AllDates; let i = index">-->
+<!--          <ng-container *ngFor="let date of dates">-->
+<!--            <td *ngIf="GetDay(date) === 'SUNDAY'">-->
+<!--              <small>{{GetMonth(date)}}</small>-->
+<!--              <h1>{{GetDate(date)}}</h1>-->
+<!--              <small>{{GetDay(date)}}</small>-->
+<!--            </td>-->
+<!--            <td *ngIf="GetDay(date) === 'MONDAY'">-->
+<!--              <small>{{GetMonth(date)}}</small>-->
+<!--              <h1>{{GetDate(date)}}</h1>-->
+<!--              <small>{{GetDay(date)}}</small>-->
+<!--            </td>-->
+<!--            <td *ngIf="GetDay(date) === 'TUESDAY'">-->
+<!--              <small>{{GetMonth(date)}}</small>-->
+<!--              <h1>{{GetDate(date)}}</h1>-->
+<!--              <small>{{GetDay(date)}}</small>-->
+<!--            </td>-->
+<!--            <td *ngIf="GetDay(date) === 'WEDNESDAY'">-->
+<!--              <small>{{GetMonth(date)}}</small>-->
+<!--              <h1>{{GetDate(date)}}</h1>-->
+<!--              <small>{{GetDay(date)}}</small>-->
+<!--            </td>-->
+<!--            <td *ngIf="GetDay(date) === 'THURSDAY'">-->
+<!--              <small>{{GetMonth(date)}}</small>-->
+<!--              <h1>{{GetDate(date)}}</h1>-->
+<!--              <small>{{GetDay(date)}}</small>-->
+<!--            </td>-->
+<!--            <td *ngIf="GetDay(date) === 'FRIDAY'">-->
+<!--              <small>{{GetMonth(date)}}</small>-->
+<!--              <h1>{{GetDate(date)}}</h1>-->
+<!--              <small>{{GetDay(date)}}</small>-->
+<!--            </td>-->
+<!--            <td *ngIf="GetDay(date) === 'SATURDAY'">-->
+<!--              <small>{{GetMonth(date)}}</small>-->
+<!--              <h1>{{GetDate(date)}}</h1>-->
+<!--              <small>{{GetDay(date)}}</small>-->
+<!--            </td>-->
+<!--          </ng-container>-->
+<!--        </tr>-->
+        <tr *ngFor="let dates of AllDates; let i = index">
+         <ng-container *ngFor="let date of dates">
+           <td>
+             <div *ngIf="GetDay(date) === 'SUNDAY'">
+               <small>{{GetMonth(date)}}</small>
+               <h1>{{GetDate(date)}}</h1>
+               <small>{{GetDay(date)}}</small>
+             </div>
+           </td>
+           <td>
+             <div *ngIf="GetDay(date) === 'MONDAY'">
+               <small>{{GetMonth(date)}}</small>
+               <h1>{{GetDate(date)}}</h1>
+               <small>{{GetDay(date)}}</small>
+             </div>
+           </td>
+           <td>
+             <div *ngIf="GetDay(date) === 'TUESDAY'">
+               <small>{{GetMonth(date)}}</small>
+               <h1>{{GetDate(date)}}</h1>
+               <small>{{GetDay(date)}}</small>
+             </div>
+           </td>
+           <td>
+             <div *ngIf="GetDay(date) === 'WEDNESDAY'">
+               <small>{{GetMonth(date)}}</small>
+               <h1>{{GetDate(date)}}</h1>
+               <small>{{GetDay(date)}}</small>
+             </div>
+           </td>
+           <td>
+             <div *ngIf="GetDay(date) === 'THURSDAY'">
+               <small>{{GetMonth(date)}}</small>
+               <h1>{{GetDate(date)}}</h1>
+               <small>{{GetDay(date)}}</small>
+             </div>
+           </td>
+           <td>
+             <div *ngIf="GetDay(date) === 'FRIDAY'">
+               <small>{{GetMonth(date)}}</small>
+               <h1>{{GetDate(date)}}</h1>
+               <small>{{GetDay(date)}}</small>
+             </div>
+           </td>
+           <td>
+             <div *ngIf="GetDay(date) === 'SATURDAY'">
+               <small>{{GetMonth(date)}}</small>
+               <h1>{{GetDate(date)}}</h1>
+               <small>{{GetDay(date)}}</small>
+             </div>
+           </td>
+         </ng-container>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-</ng-container>
-<ng-container *ngIf="useUTC">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-3" *ngFor="let date of AllDates">
-        <div class="datec" [ngClass]="GetToday(date)">
-          <small>{{GetMonthUTC(date)}}</small>
-          <h1>{{GetUTCDate(date)}}</h1>
-          <small>{{GetUTCDay(date)}}</small>
-        </div>
-      </div>
-    </div>
-  </div>
-</ng-container>
+</div>
