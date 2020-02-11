@@ -1,7 +1,7 @@
 # ANGULAR PLAY GROUND
 
-For those seeking to have fun implementing angular stuff, this can be your playground
-For those of you seeking knowledge or solutions, search through you might find what you are looking for
+For those seeking to have fun implementing angular stuff, this can be your playground.
+For those of you seeking knowledge or solutions, search through you might find what you are looking for.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
