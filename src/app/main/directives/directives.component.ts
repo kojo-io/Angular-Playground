@@ -10,7 +10,6 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class DirectivesComponent implements OnInit {
   public money: any;
   private form: FormGroup;
-  date: Date;
   constructor(
     private baseService: BaseService,
     private formBuilder: FormBuilder
@@ -18,10 +17,8 @@ export class DirectivesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.date = new Date();
     this.form = this.formBuilder.group({
-      money: [null],
-      date: [null]
+      money: [null]
     });
   }
 
