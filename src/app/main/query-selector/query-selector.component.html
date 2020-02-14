@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <form [formGroup]="form" class="col-12">
+      <div class="col-4 form-group">
+        <select formControlName="schema" class="form-control">
+          <option *ngFor="let s of schema" value="{{s}}">{{s}}</option>
+        </select>
+      </div>
+      <div class="col-4 form-group">
+        <select formControlName="table" class="form-control">
+          <option *ngFor="let s of table" value="{{s}}">{{s}}</option>
+        </select>
+      </div>
+      <div class="col-4 form-group">
+        <select [(ngModel)]="queryCreator" class="form-control">
+          <option *ngFor="let s of field" [value]="s">{{s}}</option>
+        </select>
+      </div>
+      <div class="col-4 form-group">
+        <input formControlName="comparator" class="form-control">
+      </div>
+      <div class="col-4 form-group">
+        <button class="btn btn-primary btn-block">Undo</button>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body text-monospace">
+          <h5>Query container</h5>
+          {{queryCreator}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

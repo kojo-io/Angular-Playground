@@ -37,6 +37,11 @@ const routes: Routes = [{
       path: 'simple-validators',
       canActivate: [RouteGuardService],
       loadChildren: () => import('./simple-validators/simple-validators.module').then(u => u.SimpleValidatorsModule)
+    },
+    {
+      path: 'query-selector',
+      canActivate: [RouteGuardService],
+      loadChildren: () => import('./query-selector/query-selector.module').then(u => u.QuerySelectorModule)
     }
   ]
 }];
