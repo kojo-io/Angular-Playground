@@ -27,9 +27,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'WalletHub'`, () => {
+  it(`should have as title 'Angular Play Ground'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('WalletHub');
+    expect(app.title).toEqual('Angular Play Ground');
   });
 });

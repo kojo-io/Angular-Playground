@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {SharedModule} from './shared/shared.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {LayoutModule} from './shared/layout/layout.module';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';

@@ -36,10 +36,6 @@ export class SideNavComponent implements OnInit {
       title: 'Simple Validators'
     },
     {
-      path: '/main/query-selector',
-      title: 'Query Selector'
-    },
-    {
       path: '/login',
       title: 'Log Out (Route Guard)'
     }
