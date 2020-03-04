@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {BaseService} from '../../shared/base.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {CurrencyInputDirective} from '../../shared/currency-input.directive';
 
 @Component({
   selector: 'app-directives',
@@ -9,7 +10,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class DirectivesComponent implements OnInit {
   public money: any;
-  private form: FormGroup;
+  form: FormGroup;
   constructor(
     private baseService: BaseService,
     private formBuilder: FormBuilder
