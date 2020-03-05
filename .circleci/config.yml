@@ -32,6 +32,6 @@ jobs:
           paths:
             - "node_modules"
       - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-      - run: npm build --prod
+      - run: npm run build --prod
       - run: npm run ftp-deploy
 #      - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
