@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ftp-deploy": "node deploy.js"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,8 @@
     "@angular/router": "~8.2.14",
     "acorn": "^6.1.1",
     "bootstrap": "^4.4.1",
+    "ftp": "^0.3.10",
+    "glob": "^7.1.6",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
