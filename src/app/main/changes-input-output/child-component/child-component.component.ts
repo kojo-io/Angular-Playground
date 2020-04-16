@@ -11,11 +11,11 @@ import {strictEqual} from 'assert';
 export class ChildComponentComponent implements OnInit, OnChanges {
 
   public changes: any;
-  private form: FormGroup;
+  form: FormGroup;
 
   @Output() newValue = new EventEmitter<any>();
   @Input() receivedValue: string;
-  private console: Array<string> = [];
+  console: Array<string> = [];
   public logger: string;
   constructor(
     private baseService: BaseService,

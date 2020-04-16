@@ -1,0 +1,12 @@
+.datec{
+  /* background-color: rgb(233, 233, 233); */
+  width: 100%;
+  margin: 10px !important;
+}
+
+
+.datec.selected{
+  background-color: #3880ff !important;
+  color: white !important;
+  cursor: pointer;
+}

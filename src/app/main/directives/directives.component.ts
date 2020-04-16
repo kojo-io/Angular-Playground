@@ -9,7 +9,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class DirectivesComponent implements OnInit {
   public money: any;
-  private form: FormGroup;
+  form: FormGroup;
+  date = new Date();
   constructor(
     private baseService: BaseService,
     private formBuilder: FormBuilder

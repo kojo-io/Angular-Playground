@@ -1,7 +1,7 @@
 <form [formGroup]="form">
   <input class="form-control" formControlName="date" type="date">
 </form>
-<div class="container-fluid">
+<div class="container-fluid m-4">
   <div class="row">
     <div class="col-4">
       <div class="btn-group">
@@ -15,45 +15,46 @@
     </div>
   </div>
 </div>
-<br>
-<!--<ng-container *ngIf="!useUTC">-->
-<!--  <div class="container-fluid">-->
-<!--    <div class="row">-->
-<!--      <div class="col-2" *ngFor="let date of AllDates">-->
-<!--        <div class="datec" [ngClass]="GetToday(date)">-->
-<!--          <small>{{GetMonth(date)}}</small>-->
-<!--          <h1>{{GetDate(date)}}</h1>-->
-<!--          <small>{{GetDay(date)}}</small>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</ng-container>-->
-<!--<ng-container *ngIf="useUTC">-->
-<!--  <div class="container-fluid">-->
-<!--    <div class="row">-->
-<!--      <div class="col-3" *ngFor="let date of AllDates">-->
-<!--        <div class="datec" [ngClass]="GetToday(date)">-->
-<!--          <small>{{GetMonthUTC(date)}}</small>-->
-<!--          <h1>{{GetUTCDate(date)}}</h1>-->
-<!--          <small>{{GetUTCDay(date)}}</small>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</ng-container>-->
-<!--<div class="col-2" *ngFor="let date of AllDates">-->
-<!--  <div class="datec" [ngClass]="GetToday(date)">-->
-<!--    <small>{{GetMonth(date)}}</small>-->
-<!--    <h1>{{GetDate(date)}}</h1>-->
-<!--    <small>{{GetDay(date)}}</small>-->
-<!--  </div>-->
-<!--</div>-->
+
+<!-- <ng-container *ngIf="!useUTC">
+ <div class="container-fluid">
+   <div class="row">
+     <div class="col-2" *ngFor="let date of AllDates">
+       <div class="datec" [ngClass]="GetToday(date)">
+         <small>{{GetMonth(date)}}</small>
+         <h1>{{GetDate(date)}}</h1>
+         <small>{{GetDay(date)}}</small>
+       </div>
+     </div>
+   </div>
+ </div>
+</ng-container>
+<ng-container *ngIf="useUTC">
+ <div class="container-fluid">
+   <div class="row">
+     <div class="col-3" *ngFor="let date of AllDates">
+       <div class="datec" [ngClass]="GetToday(date)">
+         <small>{{GetMonthUTC(date)}}</small>
+         <h1>{{GetUTCDate(date)}}</h1>
+         <small>{{GetUTCDay(date)}}</small>
+       </div>
+     </div>
+   </div>
+ </div>
+</ng-container> -->
+<!-- <div class="col-2" *ngFor="let date of AllDates">
+ <div class="datec" [ngClass]="GetToday(date)">
+   <small>{{GetMonth(date)}}</small>
+   <h1>{{GetDate(date)}}</h1>
+   <small>{{GetDay(date)}}</small>
+ </div>
+</div> -->
 <div class="container-fluid">
-  <div class="row">
+  <h1 class=" text-center">{{monthYear}}</h1>
+  <div class="row text-center" style="border: solid 1px grey;">
     <div class="col-12">
-      <table class="table table-bordered">
-        <thead>
+      <table class="table table-borderless">
+        <thead style="border-bottom: solid 1px grey" >
         <tr>
           <th *ngFor="let days of AllDays">
             {{days}}
@@ -61,46 +62,54 @@
         </tr>
         </thead>
         <tbody>
-<!--        <tr *ngFor="let dates of AllDates; let i = index">-->
-<!--          <ng-container *ngFor="let date of dates">-->
-<!--            <td *ngIf="GetDay(date) === 'SUNDAY'">-->
-<!--              <small>{{GetMonth(date)}}</small>-->
-<!--              <h1>{{GetDate(date)}}</h1>-->
-<!--              <small>{{GetDay(date)}}</small>-->
-<!--            </td>-->
-<!--            <td *ngIf="GetDay(date) === 'MONDAY'">-->
-<!--              <small>{{GetMonth(date)}}</small>-->
-<!--              <h1>{{GetDate(date)}}</h1>-->
-<!--              <small>{{GetDay(date)}}</small>-->
-<!--            </td>-->
-<!--            <td *ngIf="GetDay(date) === 'TUESDAY'">-->
-<!--              <small>{{GetMonth(date)}}</small>-->
-<!--              <h1>{{GetDate(date)}}</h1>-->
-<!--              <small>{{GetDay(date)}}</small>-->
-<!--            </td>-->
-<!--            <td *ngIf="GetDay(date) === 'WEDNESDAY'">-->
-<!--              <small>{{GetMonth(date)}}</small>-->
-<!--              <h1>{{GetDate(date)}}</h1>-->
-<!--              <small>{{GetDay(date)}}</small>-->
-<!--            </td>-->
-<!--            <td *ngIf="GetDay(date) === 'THURSDAY'">-->
-<!--              <small>{{GetMonth(date)}}</small>-->
-<!--              <h1>{{GetDate(date)}}</h1>-->
-<!--              <small>{{GetDay(date)}}</small>-->
-<!--            </td>-->
-<!--            <td *ngIf="GetDay(date) === 'FRIDAY'">-->
-<!--              <small>{{GetMonth(date)}}</small>-->
-<!--              <h1>{{GetDate(date)}}</h1>-->
-<!--              <small>{{GetDay(date)}}</small>-->
-<!--            </td>-->
-<!--            <td *ngIf="GetDay(date) === 'SATURDAY'">-->
-<!--              <small>{{GetMonth(date)}}</small>-->
-<!--              <h1>{{GetDate(date)}}</h1>-->
-<!--              <small>{{GetDay(date)}}</small>-->
-<!--            </td>-->
-<!--          </ng-container>-->
-<!--        </tr>-->
-        <tr *ngFor="let dates of AllDates; let i = index">
+          <tr *ngFor="let dates of weeks; let i = index">
+            <ng-container *ngIf="dates.week !== null">
+              <ng-container *ngFor="let date of dates.dates" >
+                <ng-container *ngIf="date === null" >
+                  <td>
+                  </td>
+                </ng-container>
+                <ng-container *ngIf="date !== null" >
+                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date)  === 'SUN'"  >
+                    <div>
+                      {{GetDate(date)}}
+                    </div>
+                  </td>
+                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date)  === 'MON'" >
+                    <div>
+                      {{GetDate(date)}}
+                    </div>
+                  </td>
+                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date) === 'TUES'" >
+                    <div>
+                      {{GetDate(date)}}
+                    </div>
+                  </td>
+                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date)  === 'WED'" >
+                    <div>
+                      {{GetDate(date)}}
+                    </div>
+                  </td>
+                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date) ==='THURS'" >
+                    <div>
+                      {{GetDate(date)}}
+                    </div>
+                  </td>
+                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date) ==='FRI'" >
+                    <div>
+                      {{GetDate(date)}}
+                    </div>
+                  </td>
+                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date) ==='SAT'" >
+                    <div>
+                      {{GetDate(date)}}
+                    </div>
+                  </td>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </tr>
+        <!-- <tr *ngFor="let dates of AllDates; let i = index">
          <ng-container *ngFor="let date of dates">
            <td>
              <div *ngIf="GetDay(date) === 'SUNDAY'">
@@ -152,7 +161,7 @@
              </div>
            </td>
          </ng-container>
-        </tr>
+        </tr> -->
         </tbody>
       </table>
     </div>
