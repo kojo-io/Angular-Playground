@@ -9,7 +9,7 @@ import {MainService} from '../main.service';
 })
 export class PassDataComponent implements OnInit {
 
-  private form: FormGroup;
+  form: FormGroup;
   private receivedMessage: string;
   constructor(private formBuilder: FormBuilder,
               private mainService: MainService) {

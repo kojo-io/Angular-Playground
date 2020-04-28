@@ -11,6 +11,7 @@ import {CurrencyInputDirective} from '../../shared/currency-input.directive';
 export class DirectivesComponent implements OnInit {
   public money: any;
   form: FormGroup;
+  date = new Date();
   constructor(
     private baseService: BaseService,
     private formBuilder: FormBuilder

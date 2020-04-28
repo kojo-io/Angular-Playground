@@ -9,7 +9,7 @@ import {CustomValidatorDirective} from './custom-validator.directive';
 })
 export class SimpleValidatorsComponent implements OnInit {
 
-  private form: FormGroup;
+  form: FormGroup;
   show: false;
   constructor(private formBuilder: FormBuilder) {
   }
