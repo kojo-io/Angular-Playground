@@ -10,3 +10,7 @@
   color: white !important;
   cursor: pointer;
 }
+
+table {
+  table-layout: fixed;
+}

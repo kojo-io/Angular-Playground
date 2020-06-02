@@ -36,6 +36,10 @@ export class SideNavComponent implements OnInit {
       title: 'Simple Validators'
     },
     {
+      path: '/main/calendar',
+      title: 'Calendar'
+    },
+    {
       path: '/login',
       title: 'Log Out (Route Guard)'
     }

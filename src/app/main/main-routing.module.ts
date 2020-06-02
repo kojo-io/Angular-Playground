@@ -37,6 +37,11 @@ const routes: Routes = [{
       path: 'simple-validators',
       canActivate: [RouteGuardService],
       loadChildren: () => import('./simple-validators/simple-validators.module').then(u => u.SimpleValidatorsModule)
+    },
+    {
+      path: 'calendar',
+      canActivate: [RouteGuardService],
+      loadChildren: () => import('./calendar/calendar.module').then(u => u.CalendarModule)
     }
   ]
 }];

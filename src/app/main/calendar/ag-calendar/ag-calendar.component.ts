@@ -211,7 +211,6 @@ export class AgCalendarComponent implements OnInit, OnChanges {
     this.monthCount--;
     if (this.monthCount === -1) {
       this.monthCount = 11;
-      console.log(this.monthCount);
       this.agDate = new Date(this.agDate.getFullYear() - 1, 11, 1);
     } else {
       this.agDate.setMonth(this.agDate.getMonth() - 1);
