@@ -37,6 +37,16 @@ const routes: Routes = [{
       path: 'simple-validators',
       canActivate: [RouteGuardService],
       loadChildren: () => import('./simple-validators/simple-validators.module').then(u => u.SimpleValidatorsModule)
+    },
+    {
+      path: 'timers',
+      canActivate: [RouteGuardService],
+      loadChildren: () => import('./timer/timer.module').then(u => u.TimerModule)
+    },
+    {
+      path: 'cropper',
+      canActivate: [RouteGuardService],
+      loadChildren: () => import('./cropper/cropper.module').then(u => u.CropperModule)
     }
   ]
 }];

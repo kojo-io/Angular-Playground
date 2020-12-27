@@ -36,6 +36,14 @@ export class SideNavComponent implements OnInit {
       title: 'Simple Validators'
     },
     {
+      path: '/main/timers',
+      title: 'Timers'
+    },
+    {
+      path: '/main/cropper',
+      title: 'Cropper'
+    },
+    {
       path: '/login',
       title: 'Log Out (Route Guard)'
     }

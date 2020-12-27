@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h1>{{timer}}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h1>{{timer2}}</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h1>{{timer3}}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h1>{{duration}}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <span>{{compareDateAgainstToday()}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="position: fixed; bottom: 0; left: 0; right: 0; width: 100%" *ngIf="duration < 60">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <div style="border-radius: 10px 10px 0 0; background-color: #fd3e3e; color: white; text-align: center">
+        <h6>{{endState}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
