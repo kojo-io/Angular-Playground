@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "ngx-utopia-design": {
+      "projectType": "library",
+      "root": "projects/ngx-utopia-design",
+      "sourceRoot": "projects/ngx-utopia-design/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-utopia-design/tsconfig.lib.json",
+            "project": "projects/ngx-utopia-design/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-utopia-design/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-utopia-design/src/test.ts",
+            "tsConfig": "projects/ngx-utopia-design/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-utopia-design/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-utopia-design/tsconfig.lib.json",
+              "projects/ngx-utopia-design/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "WalletHub"
 }

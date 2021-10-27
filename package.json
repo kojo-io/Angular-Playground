@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",
+    "@angular-devkit/build-ng-packagr": "~0.901.1",
     "@angular/cli": "^9.1.1",
     "@angular/compiler-cli": "~9.1.1",
     "@angular/language-service": "~9.1.1",
@@ -49,6 +50,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-packagr": "^9.0.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",

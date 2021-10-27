@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-utopia-design": [
+        "dist/ngx-utopia-design/ngx-utopia-design",
+        "dist/ngx-utopia-design"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
