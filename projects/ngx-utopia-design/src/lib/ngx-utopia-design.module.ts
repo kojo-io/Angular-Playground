@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { NgxUtopiaDesignComponent } from './ngx-utopia-design.component';
+import {UtpButtonDirective} from './utp-button/utp-button.directive';
 
 
 
 @NgModule({
-  declarations: [NgxUtopiaDesignComponent],
+  declarations: [UtpButtonDirective],
   imports: [
   ],
-  exports: [NgxUtopiaDesignComponent]
+  exports: [UtpButtonDirective]
 })
 export class NgxUtopiaDesignModule { }
