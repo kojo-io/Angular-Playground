@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "WalletHub"
+    }
+  },
+  "defaultProject": "WalletHub",
+  "cli": {
+    "analytics": false
+  }
 }

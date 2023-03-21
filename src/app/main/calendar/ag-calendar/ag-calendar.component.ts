@@ -1,4 +1,4 @@
-import { element } from 'protractor';
+
 import {
   Component,
   Input,
@@ -9,7 +9,11 @@ import {
   EventEmitter,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import * as moment from 'moment';
+import getWeek from 'date-fns/getWeek';
+export interface Week {
+  date: Date[];
+  week: number;
+}
 
 @Component({
   selector: 'app-ag-calendar',
@@ -25,14 +29,36 @@ export class AgCalendarComponent implements OnInit, OnChanges {
   @Output() agDateChange = new EventEmitter<Date>();
   monthCount = 0;
   weeks: Array<any> = [];
-  AllDays: string[] = [
-    'SUN',
-    'MON',
-    'TUES',
-    'WED',
-    'THURS',
-    'FRI',
-    'SAT'
+  entireYear: Array<any> = [];
+  AllDays: any[] = [
+    {
+      id: 0,
+      day: 'SUN'
+    },
+    {
+      id: 1,
+      day: 'MON'
+    },
+    {
+      id: 2,
+      day: 'TUES'
+    },
+    {
+      id: 3,
+      day: 'WED'
+    },
+    {
+      id: 4,
+      day: 'THURS'
+    },
+    {
+      id: 5,
+      day: 'FRI'
+    },
+    {
+      id: 6,
+      day: 'SAT'
+    }
   ];
 
   AllMonths: string[] = [
@@ -50,11 +76,6 @@ export class AgCalendarComponent implements OnInit, OnChanges {
     'DECEMBER',
   ];
 
-  Month: any;
-  Day: any;
-  Date: any;
-  Year: any;
-
   AllDates: Array<any> = [];
   constructor(private formBuilder: FormBuilder) {}
 
@@ -66,11 +87,11 @@ export class AgCalendarComponent implements OnInit, OnChanges {
     this.monthCount = this.agDate.getMonth();
     console.log(this.monthCount);
     this.GetDefaultCalendar();
-
-    this.form.get('date').setValue(new Date());
-    this.form.get('date').valueChanges.subscribe((value) => {
-      this.GetCalendar(value);
-    });
+    //
+    // this.form.get('date').setValue(new Date());
+    // this.form.get('date').valueChanges.subscribe((value) => {
+    //   this.GetCalendar(value);
+    // });
   }
 
   GetCalendar(date) {
@@ -99,29 +120,39 @@ export class AgCalendarComponent implements OnInit, OnChanges {
         this.agDate.getFullYear(),
         this.agDate.getMonth()
       );
+      // this.AllMonths.forEach((month) => {
+      //   const m = this.AllMonths.findIndex(u => u === month);
+      //   console.log(m, month);
+      //
+      //
+      //   this.GetWeeks(this.AllDates);
+      //   this.entireYear.push(this.weeks);
+      //   console.log(this.weeks);
+      //   console.log(this.entireYear);
+      // });
     }
 
     this.GetWeeks(this.AllDates);
-
-    // this.weeks = groupBy(this.AllDates, (dt) => moment(dt).week());
-    // console.log('v', groupBy(this.AllDates, (dt) => moment(dt).week()));
-    console.log(this.weeks);
   }
 
   GetWeeks(dates) {
     this.weeks = [];
+    console.log(dates);
     dates.forEach((elements) => {
       // this.AllDates.f
-      const week = moment(elements).week();
-      const getWeek = this.weeks.find((u) => u.week === week);
-      if (getWeek === undefined) {
+      const week = getWeek(elements);
+      console.log(week);
+      const getdayWeek = this.weeks.find((u) => u.week === week);
+      if (getdayWeek === undefined) {
         // if(this.GetDay(element) ===)
         this.weeks.push({
           week,
           dates: [elements],
         });
+
+        console.log(this.weeks);
       } else {
-        getWeek.dates.push(elements);
+        getdayWeek.dates.push(elements);
       }
     });
 
@@ -182,8 +213,8 @@ export class AgCalendarComponent implements OnInit, OnChanges {
     return this.AllDays[date.getUTCDay()];
   }
 
-  GetDay(date: Date): any {
-    return this.AllDays[date.getDay()];
+  GetDay(index: any): any {
+    return this.AllDays.find(u => u.id === index).day;
   }
 
   GetDate(date: Date): any {

@@ -21,50 +21,20 @@
         <thead style="border-bottom: solid 1px grey" >
         <tr>
           <th *ngFor="let days of AllDays">
-            {{days}}
+            {{days.day}}
           </th>
         </tr>
         </thead>
         <tbody>
           <tr *ngFor="let dates of weeks; let i = index">
             <ng-container *ngIf="dates.week !== null">
-              <ng-container *ngFor="let date of dates.dates" >
+              <ng-container *ngFor="let date of dates.dates; let d = index" >
                 <ng-container *ngIf="date === null" >
                   <td>
                   </td>
                 </ng-container>
                 <ng-container *ngIf="date !== null" >
-                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date)  === 'SUN'"  >
-                    <div>
-                      {{GetDate(date)}}
-                    </div>
-                  </td>
-                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date)  === 'MON'" >
-                    <div>
-                      {{GetDate(date)}}
-                    </div>
-                  </td>
-                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date) === 'TUES'" >
-                    <div>
-                      {{GetDate(date)}}
-                    </div>
-                  </td>
-                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date)  === 'WED'" >
-                    <div>
-                      {{GetDate(date)}}
-                    </div>
-                  </td>
-                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date) ==='THURS'" >
-                    <div>
-                      {{GetDate(date)}}
-                    </div>
-                  </td>
-                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date) ==='FRI'" >
-                    <div>
-                      {{GetDate(date)}}
-                    </div>
-                  </td>
-                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(date) ==='SAT'" >
+                  <td (click)="onCalendarChange(date, element)" class="datec" #element >
                     <div>
                       {{GetDate(date)}}
                     </div>
@@ -73,6 +43,53 @@
               </ng-container>
             </ng-container>
           </tr>
+<!--          <tr *ngFor="let dates of weeks; let i = index">-->
+<!--            <ng-container *ngIf="dates.week !== null">-->
+<!--              <ng-container *ngFor="let date of dates.dates; let d = index" >-->
+<!--                <ng-container *ngIf="date === null" >-->
+<!--                  <td>-->
+<!--                  </td>-->
+<!--                </ng-container>-->
+<!--                <ng-container *ngIf="date !== null" >-->
+<!--                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(d)  === 'MON'" >-->
+<!--                    <div>-->
+<!--                      {{GetDate(date)}}-->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(d) === 'TUES'" >-->
+<!--                    <div>-->
+<!--                      {{GetDate(date)}}-->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(d)  === 'WED'" >-->
+<!--                    <div>-->
+<!--                      {{GetDate(date)}}-->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(d) ==='THURS'" >-->
+<!--                    <div>-->
+<!--                      {{GetDate(date)}}-->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(d) ==='FRI'" >-->
+<!--                    <div>-->
+<!--                      {{GetDate(date)}}-->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(d) ==='SAT'" >-->
+<!--                    <div>-->
+<!--                      {{GetDate(date)}}-->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                  <td (click)="onCalendarChange(date, element)" class="datec" #element *ngIf="GetDay(d)  === 'SUN'"  >-->
+<!--                    <div>-->
+<!--                      {{GetDate(date)}}-->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                </ng-container>-->
+<!--              </ng-container>-->
+<!--            </ng-container>-->
+<!--          </tr>-->
         <!-- <tr *ngFor="let dates of AllDates; let i = index">
          <ng-container *ngFor="let date of dates">
            <td>

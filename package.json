@@ -22,6 +22,7 @@
     "@angular/router": "~9.1.1",
     "acorn": "^6.1.1",
     "bootstrap": "^4.4.1",
+    "date-fns": "^2.29.3",
     "ftp": "^0.3.10",
     "glob": "^7.1.6",
     "jquery": "^3.4.1",
